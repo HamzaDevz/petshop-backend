@@ -1,5 +1,7 @@
 'use strict';
 
+/* global require, __dirname, module */
+
 var express       = require('express');
 var path          = require('path');
 var logger        = require('morgan');
@@ -34,16 +36,12 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   var status = err.status || 500;
 
   // render the error page
   res.status(status);
   res.json({error: err.message, code: status});
-});
-
-app.listen(3000, function () {
-  console.log('Express is up');
 });
 
 module.exports = app;
