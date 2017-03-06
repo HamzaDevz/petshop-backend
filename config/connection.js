@@ -1,11 +1,13 @@
-var mysql   = require('mysql');
-var db      = require('./config');
+'use strict';
 
-var wrapper = {
-    connect: mysql.createConnection(db),
-    close: function (connection) {
-        connection.end();
+const MysqlCache = require('mysql-cache');
+const config     = require('./config');
+var mysql        = new MysqlCache(config);
+
+mysql.connect(function (err) {
+    if (err) {
+        return err;
     }
-};
+});
 
-module.exports = wrapper;
+module.exports = mysql;

@@ -2,7 +2,7 @@ var message = require('./error-message');
 
 function error (res, code, message) {
     if (res) {
-        res.status(code).send({error: message, code: code});
+        res.status(code).json({error: message, code: code});
     }
 }
 
