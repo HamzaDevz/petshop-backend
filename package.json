@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "./node_modules/.bin/jasmine-node test/*.js"
+    "test": "./node_modules/.bin/jasmine-node test/*",
+    "build": "node pet-generator"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
