@@ -26,6 +26,9 @@ Some of non standard modules used:
 
 * [express](https://www.npmjs.com/package/express)
 * [mysql-cache](https://www.npmjs.com/package/mysql-cache)
+* [frisbyjs](https://www.npmjs.com/package/frisby)
+* [jasmine-node](https://www.npmjs.com/package/jasmine-node)
+* [lodash](https://www.npmjs.com/package/lodash)
 
 ### Make CRUD Requests
 
@@ -54,5 +57,13 @@ curl -X DELETE http://localhost:3000/pets/:id
 For running ESLint
 ```
 ./node_modules/.bin/eslint */*.js *.js
+
+```
+
+### TESTS
+
+For running test using Jasmine-node
+```
+npm test
 
 ```

@@ -28,7 +28,7 @@ router.route('/:id').get(function (req, res) {
   var id = Number(req.params.id);
 
   if (id > 0) {
-    query(res, 'SELECT * FROM pets WHERE id = ?', [id]);
+    query(res, 'SELECT * FROM pets WHERE id = ?', [id], req.method);
   } else {
     errorWrapper.error(res, 400, 'Id param ' + errorMessage.integer);
   }
