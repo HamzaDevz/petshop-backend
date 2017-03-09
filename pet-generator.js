@@ -7,13 +7,13 @@ var _     = require('lodash');
 var mysql = require('./config/connection');
 
 var data = [
-  {name: 'Dog', age: 10},
-  {name: 'Horse', age: 10},
-  {name: 'Cat', age: 10},
-  {name: 'Animal', age: 10},
-  {name: 'LittleBigPlanet', age: 10},
-  {name: 'Ken', age: 22},
-  {name: 'Ryu', age: 38}
+  {name: 'Dog', age: 10, type: 'Mammal', description: 'My Dog eats well !!'},
+  {name: 'Horse', age: 10, type: 'Mammal', description: 'Horse eats well !!'},
+  {name: 'Cat', age: 10, type: 'Mammal', description: 'Cat eats well !!'},
+  {name: 'Animal', age: 10, type: 'Mammal', description: 'Animal eats well !!'},
+  {name: 'LittleBigPlanet', age: 10, type: 'Mammal', description: 'Good game !'},
+  {name: 'Ken', age: 22, type: 'Human being', description: 'Ken is the best !'},
+  {name: 'Ryu', age: 38, type: 'Human being', description: 'Ryu is very strong !'}
 ];
 
 // Clean all data from this table
