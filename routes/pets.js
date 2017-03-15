@@ -16,8 +16,12 @@ router.route('/').get(function (req, res) {
 
 /* POST new pet(s) */
 router.route('/').post(function (req, res) {
-  if (! _.isEmpty(req.body)) {
-    query(res, 'INSERT INTO pets SET ?', req.body, req.method);
+  var data = _.pickBy(req.body, function (val) {
+    return !_.isEmpty(val);
+  });
+
+  if (! _.isEmpty(data)) {
+    query(res, 'INSERT INTO pets SET ?', data, req.method);
   } else {
     errorWrapper.error(res, 400, errorMessage.bad_request);
   }
@@ -39,8 +43,12 @@ router.route('/:id').put(function (req, res) {
   var id = Number(req.params.id);
   var message = "";
 
-  if (id > 0 && !_.isEmpty(req.body)) {
-    query(res, 'UPDATE pets SET ? WHERE id = ?', [req.body, id], req.method);
+  var data = _.pickBy(req.body, function (val) {
+    return !_.isEmpty(val);
+  });
+
+  if (id > 0 && !_.isEmpty(data)) {
+    query(res, 'UPDATE pets SET ? WHERE id = ?', [data, id], req.method);
   } else {
     if (id <= 0 || isNaN(id)) {
       message = 'Id param ' + errorMessage.integer;
